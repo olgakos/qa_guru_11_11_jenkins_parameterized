@@ -56,4 +56,17 @@ tasks.withType(Test) {
         options.encoding = 'UTF-8'
     }
 
-}
+
+    //для параметризации 11
+    tasks.withType(Test) {
+        systemProperties(System.getProperties())
+        systemProperty "junit.jupiter.extensions.autodetection.enabled", "true"}
+
+    //для параметризации 11
+    task one_test_method (type: Test) {
+        useJUnitPlatform{
+            includeTags "Positive Test One Tag"}
+        }
+
+
+    }
