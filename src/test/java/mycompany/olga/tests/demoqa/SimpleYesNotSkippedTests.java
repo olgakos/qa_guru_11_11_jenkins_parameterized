@@ -21,7 +21,7 @@ public class SimpleYesNotSkippedTests {
         String remoteBrowserPassword = System.getProperty("remote_browser_password");
 
         Configuration.browserSize = "1920x1080";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
         //конфигурация удаленного запуска:
         DesiredCapabilities capabilities = new DesiredCapabilities();
@@ -45,14 +45,20 @@ public class SimpleYesNotSkippedTests {
     @Test
     @Tag("PositiveTestOneTag")
     @DisplayName("Positive Test One")
-    void test00() {assertTrue(true)};
+    void test00() {
+        assertTrue(true);
+    }
 
     @Test
     @Disabled("Skipped Test: With some reason")
     @DisplayName("False Test: With some reason")
-    void test01() {assertTrue(false)};
+    void test01() {
+        assertTrue(false);
+    }
 
     @Test
     @Disabled("Skipped Test: With some reason")
-    void test02() {assertTrue(false)};
+    void test02() {
+        assertTrue(false);
+    }
 }

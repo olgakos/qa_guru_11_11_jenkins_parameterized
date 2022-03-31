@@ -9,11 +9,11 @@ repositories {
 
 //техническое для сокращения лога запуска теста
 def selenideVersion = "6.2.1",
-//junitVersion = "5.8.2",
+    junitVersion = "5.8.2",
     slf4jVersion = "1.7.36"
 
-def allureVersion = '2.17.3',
-    junitVersion = "5.8.2" //Logging
+def allureVersion = '2.17.3'
+    //junitVersion = "5.8.2" //Logging
 
 allure {
     report {
