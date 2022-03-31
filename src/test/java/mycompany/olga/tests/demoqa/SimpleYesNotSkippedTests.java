@@ -10,8 +10,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-
-
 @DisplayName("It's 3 Simple Yes-Not-Skipped Tests")
 public class SimpleYesNotSkippedTests {
 
@@ -19,11 +17,9 @@ public class SimpleYesNotSkippedTests {
     @BeforeAll
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-
         String remoteBrowserUser = System.getProperty("remote_browser_user");
         String remoteBrowserPassword = System.getProperty("remote_browser_password");
 
-        //Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
 
@@ -46,23 +42,17 @@ public class SimpleYesNotSkippedTests {
 
     //------------example----------------------------
 
-
     @Test
-    @Tag("Positive Test One Tag")
+    @Tag("PositiveTestOneTag")
     @DisplayName("Positive Test One")
-    void test00() {
-        assertTrue(true);
-    }
-
-    @Test
-    @DisplayName("False Test: With some reason")
-    void test01() {
-        assertTrue(false);
-    }
+    void test00() {assertTrue(true)};
 
     @Test
     @Disabled("Skipped Test: With some reason")
-    void test02() {
-        assertTrue(false);
-    }
+    @DisplayName("False Test: With some reason")
+    void test01() {assertTrue(false)};
+
+    @Test
+    @Disabled("Skipped Test: With some reason")
+    void test02() {assertTrue(false)};
 }
