@@ -13,7 +13,7 @@ def selenideVersion = "6.2.1",
     slf4jVersion = "1.7.36"
 
 def allureVersion = '2.17.3'
-    //junitVersion = "5.8.2" //Logging
+//junitVersion = "5.8.2" //Logging
 
 allure {
     report {
@@ -43,31 +43,28 @@ dependencies {
 tasks.withType(Test) {
     useJUnitPlatform()
 
-
     testLogging {
         lifecycle {
-//            events "started", "failed"
+// events "started", "failed"
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
     }
 
-    //fix: кириллица
+//fix: кириллица
     tasks.withType(JavaCompile) {
         options.encoding = 'UTF-8'
     }
 
-
-    //для параметризации 11
+//для параметризации 11
     tasks.withType(Test) {
         systemProperties(System.getProperties())
         systemProperty "junit.jupiter.extensions.autodetection.enabled", "true"
     }
 }
-    //для параметризации 11-2
-    task one_test_method (type: Test) {
-        useJUnitPlatform{
-            includeTags "PositiveTestOneTag"}
-        }
-
-
+//для параметризации 11-2
+    task one_test_method(type: Test) {
+        useJUnitPlatform {
+        includeTags "PositiveTestOneTag"
+    }
+}

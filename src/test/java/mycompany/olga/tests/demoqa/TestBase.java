@@ -18,12 +18,13 @@ public class TestBase {
 
         String remoteBrowserUser = System.getProperty("remote_browser_user");
         String remoteBrowserPassword = System.getProperty("remote_browser_password");
-
+        String remoteBrowser = System.getProperty("remote_browser", "selenoid.autotests.cloud/wd/hub");
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1080";
         Configuration.pageLoadTimeout = 5000;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
+        Configuration.remote = "https://" + remoteBrowserUser + ":" + remoteBrowserPassword + "@" + remoteBrowser;
 
         //конфигурация удаленного запуска:
         DesiredCapabilities capabilities = new DesiredCapabilities();
