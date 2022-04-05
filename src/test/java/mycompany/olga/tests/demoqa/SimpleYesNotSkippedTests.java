@@ -56,11 +56,10 @@ public class SimpleYesNotSkippedTests {
         Attach.pageSource();
         Attach.browserConsoleLogs();
         Attach.addVideo();
-        closeWebDriver();
+        closeWebDriver(); // браузера НЕТ
     }
     //------------example----------------------------
 */
-
 
     @Test
     @Tag("PositiveTestOneTag")
