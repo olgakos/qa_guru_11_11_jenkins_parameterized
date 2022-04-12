@@ -11,7 +11,8 @@ import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @DisplayName("It's 3 Simple Yes-Not-Skipped Tests")
-public class SimpleYesNotSkippedTests {
+public class SimpleYesNotSkippedTests //no TestBase!
+{
 
     /*
     //------------example----------------------------
@@ -29,7 +30,7 @@ public class SimpleYesNotSkippedTests {
         //локально:
         //String browser = System.getProperty("browser","CHROME");
         //String size = System.getProperty("size","1920x1080");
-        //String browserVersion = System.getProperty("version", "100"); // !!! следить за актуальн. верс.
+        //String browserVersion = System.getProperty("version", "100.0"); // !!! следить за актуальн. верс.
 
         //конфиг:
         //Configuration.baseUrl = "не нужен";
@@ -69,6 +70,7 @@ public class SimpleYesNotSkippedTests {
     }
 
     @Test
+    @Disabled("Skipped Test: With some reason")
     @DisplayName("False Test: With some reason")
     void test01() {
         assertTrue(false);

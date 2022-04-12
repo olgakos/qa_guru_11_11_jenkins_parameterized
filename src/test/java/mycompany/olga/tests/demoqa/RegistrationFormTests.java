@@ -21,7 +21,7 @@ public class RegistrationFormTests extends TestBase {
         $("[id=firstName]").setValue("Olga");
         $("#lastName").setValue("Kos"); //вниамние на разницу с #
         $("#userEmail").setValue("ok@yandex.ru");
-        //$(byText("Female")).click(); //Gender // todo возможны вараинты
+        //$(byText("Female")).click(); //Gender
         $("#genterWrapper").$(byText("Female")).click();
         $("#userNumber").setValue("8125560781"); //Mobile(10 Digits)
         //Date of Birth

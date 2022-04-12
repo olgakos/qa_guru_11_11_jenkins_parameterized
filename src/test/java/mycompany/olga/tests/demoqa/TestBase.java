@@ -23,7 +23,7 @@ public class TestBase {
         //локально:
         String browser = System.getProperty("browser","CHROME");
         String size = System.getProperty("size","1920x1080");
-        String browserVersion = System.getProperty("version", "100"); // !!! следить за актуальн. верс.
+        String browserVersion = System.getProperty("version", "100.0"); // !!! следить за актуальн. верс.
 
         //конфиг:
         Configuration.baseUrl = "https://demoqa.com";
@@ -33,8 +33,9 @@ public class TestBase {
         Configuration.browserVersion = browserVersion; // !!! следить за актуальн. верс.
         Configuration.pageLoadTimeout = 5000;
 
+        //NB чтобы запустить тест локально (на отладку) - закоммен. строку "Configuration.remote =...."
         //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        Configuration.remote = "https://" + remoteBrowserUser + ":" + remoteBrowserPassword + "@" + remoteBrowserURL;
+       Configuration.remote = "https://" + remoteBrowserUser + ":" + remoteBrowserPassword + "@" + remoteBrowserURL;
 
         //конфигурация удаленного запуска:
         DesiredCapabilities capabilities = new DesiredCapabilities();
